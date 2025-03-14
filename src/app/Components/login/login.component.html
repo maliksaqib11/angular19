@@ -1,0 +1,27 @@
+<p>login works!</p>
+<h1>my name is {{name}}</h1>
+<br>
+<div> <input type="text" [value]="name" >
+   
+    <div class="container">
+        <h2>{{ isLogin ? 'Login' : 'Sign Up' }}</h2>
+        <form>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group" *ngIf="!isLogin">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password">
+            </div>
+            <button type="submit" class="button">{{ isLogin ? 'Login' : 'Sign Up' }}</button>
+        </form>
+        <p class="toggle-link" (click)="toggleForm()">
+            {{ isLogin ? "Don't have an account? Sign up" : "Already have an account? Login" }}
+        </p>
+    </div>
+    

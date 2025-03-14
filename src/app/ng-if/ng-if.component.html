@@ -1,0 +1,36 @@
+
+<div>
+    <ul>
+        <p>ngFor works!</p>
+      <ol *ngFor ="let city of cityname"> {{city}}</ol>
+    </ul>
+</div>
+<div class="col-3">
+    <button *ngFor="let city of cityname" [ngStyle]="{'padding':'5px','margin':'8px','background-color': 'green', 'color': 'white'}">
+        {{ city }}
+    </button>
+    <select>
+        <option *ngFor ="let obj of empdata" [value]="obj.empid">
+{{obj.name}} -{{obj.city}}
+        </option>
+    </select>
+
+</div>
+<div>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>SrNo</th>
+                <th>Name</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of empdata; let no=index">
+                <td>{{ no + 1 }}</td>
+                <td>{{ emp.name }}</td>
+                <td>{{ emp.city }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
